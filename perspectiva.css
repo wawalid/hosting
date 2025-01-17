@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.contenedor {
+    height: 300px;
+    width: 300px;
+    perspective: 300000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cubo {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: girar 10s linear infinite;
+}
+
+.cubo div {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(230, 200, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    position: absolute;
+}
+
+.delante {
+    transform: translateZ(100px);
+}
+
+img {
+    width: 100%;    
+}
+
+.detras {
+    transform: rotateY(180deg) translateZ(100px);
+    background-color: rgba(200, 230, 255, 0.7);
+}
+
+.izquierda {
+    transform: rotateY(-90deg) translateZ(100px);
+    background-color: rgba(200, 255, 230, 0.7);
+}
+
+.derecha {
+    transform: rotateY(90deg) translateZ(100px);
+    background-color: rgba(255, 230, 200, 0.7);
+}
+
+.arriba {
+    transform: rotateX(90deg) translateZ(100px);
+    background-color: rgba(255, 200, 230, 0.7);
+}
+
+.abajo {
+    transform: rotateX(-90deg) translateZ(100px);
+    background-color: rgba(230, 255, 200, 0.7);
+}
+
+input {
+    z-index: 1;
+}
+
+@keyframes girar {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
